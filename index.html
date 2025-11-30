@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Editkaro.in - Premium video editing agency for creators, brands, and streamers. Specializing in Reels, Shorts, and High-Retention content.">
+    <meta name="keywords" content="Video Editing, Motion Graphics, YouTube Automation, Reels, Shorts, Gaming Edits, Editkaro">
     <title>Editkaro.in | Premium Video Editing Agency</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,7 +14,7 @@
         :root {
             --primary: #FF2E63; /* Vibrant Red/Pink */
             --secondary: #08D9D6; /* Cyan Accent */
-            --bg: #0f0f1a;      /* Deep Navy/Black Background */
+            --bg: #0f0f1a;       /* Deep Navy/Black Background */
             --card-bg: #1A1A2E; /* Lighter Navy */
             --text: #EAEAEA;
             --gray: #a0a0a0;
@@ -166,6 +168,40 @@
             margin-right: auto;
         }
 
+        /* --- EMAIL COLLECTOR (New Feature) --- */
+        .email-collector {
+            background: linear-gradient(90deg, #1A1A2E, #16213E);
+            padding: 40px 20px;
+            margin-top: -50px;
+            position: relative;
+            z-index: 5;
+            border-radius: 15px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+        
+        .email-form {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .email-input {
+            padding: 15px 20px;
+            border-radius: 50px;
+            border: none;
+            width: 300px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            outline: none;
+        }
+
         /* --- INFINITE MARQUEE --- */
         .marquee-container {
             background: var(--primary);
@@ -174,7 +210,8 @@
             white-space: nowrap;
             position: relative;
             transform: rotate(-1deg) scale(1.05);
-            z-index: 10;
+            z-index: 4;
+            margin-top: 50px;
             box-shadow: 0 0 20px rgba(255, 46, 99, 0.4);
         }
 
@@ -322,11 +359,12 @@
             background: transparent;
             border: 2px solid rgba(255,255,255,0.1);
             color: var(--gray);
-            padding: 10px 25px;
+            padding: 8px 20px;
             border-radius: 30px;
             cursor: pointer;
             font-weight: 600;
             transition: 0.3s;
+            font-size: 0.9rem;
         }
 
         .filter-btn:hover, .filter-btn.active {
@@ -477,6 +515,7 @@
             .contact-container { flex-direction: column; }
             .process-steps { flex-direction: column; gap: 40px; }
             .process-steps::after { display: none; }
+            .email-input { width: 100%; }
         }
     </style>
 </head>
@@ -500,6 +539,18 @@
             <button class="btn-primary" onclick="document.getElementById('portfolio').scrollIntoView()">See Our Work</button>
         </div>
     </header>
+
+    <div class="container">
+        <div class="email-collector fade-in-up">
+            <h3>Join Our Newsletter</h3>
+            <p style="margin-bottom: 10px; color: #ccc;">Get viral video tips delivered to your inbox.</p>
+            <form name="submit-to-google-sheet-email" class="email-form">
+                <input type="email" name="Email" class="email-input" placeholder="Enter your email address" required>
+                <button type="submit" class="btn-primary" style="padding: 15px 30px;">Subscribe</button>
+            </form>
+            <span id="email-msg" style="color: var(--secondary); font-size: 0.9rem; margin-top: 10px; display: block;"></span>
+        </div>
+    </div>
 
     <div class="marquee-container">
         <div class="marquee-content">
@@ -533,8 +584,8 @@
                 <div class="about-content">
                     <span class="section-subtitle">Who We Are</span>
                     <h3>More Than Just Editors, <br>We Are Storytellers.</h3>
-                    <p>At Editkaro.in, we understand that attention is the new currency. We don't just cut footage; we engineer videos to maximize retention and engagement.</p>
-                    <p>Founded in 2020, we have helped over 100+ creators and brands save time while 10x-ing their content quality. Our team consists of expert editors, VFX artists, and sound engineers passionate about the creator economy.</p>
+                    <p>At Editkaro.in, our mission is to help creators reclaim their time. We visualize your ideas and turn them into reality with precision and creativity.</p>
+                    <p>Our vision is to be the leading backbone of the creator economy. Our team consists of expert editors, VFX artists, and sound engineers passionate about storytelling.</p>
                     
                     <div style="display: flex; gap: 20px; margin-top: 20px;">
                         <div>
@@ -640,66 +691,82 @@
 
             <div class="filter-container fade-in-up">
                 <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="short">Short Form</button>
+                <button class="filter-btn" data-filter="long">Long Form</button>
                 <button class="filter-btn" data-filter="gaming">Gaming</button>
-                <button class="filter-btn" data-filter="tech">Tech</button>
-                <button class="filter-btn" data-filter="vlog">Vlogs</button>
+                <button class="filter-btn" data-filter="football">Football</button>
+                <button class="filter-btn" data-filter="ecommerce">Ads</button>
+                <button class="filter-btn" data-filter="anime">Anime</button>
             </div>
 
             <div class="portfolio-grid">
+                
                 <div class="portfolio-card fade-in-up" data-category="gaming">
-                    <div class="card-img-wrapper" onclick="playVideo(this,'xeRv-aT3po4')">
+                    <div class="card-img-wrapper" onclick="playVideo(this,'5LPsTpX9RKE')">
                         <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Gaming">
                         <i class="fas fa-play-circle play-icon"></i>
                     </div>
                     <div class="card-content">
-                        <span class="card-category">Gaming</span>
-                        <h3 class="card-title">Valorant Highlights 2025</h3>
+                        <span class="card-category">Gaming Videos</span>
+                        <h3 class="card-title">Valorant Highlights</h3>
                     </div>
                 </div>
 
-                <div class="portfolio-card fade-in-up" data-category="tech">
-                    <div class="card-img-wrapper" onclick="playVideo(this, 'WwL8K4G9Yv0')">
-                        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Tech">
+                <div class="portfolio-card fade-in-up" data-category="short">
+                    <div class="card-img-wrapper" onclick="playVideo(this, 'tVlcKp3bWH8')">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Short Form">
                         <i class="fas fa-play-circle play-icon"></i>
                     </div>
                     <div class="card-content">
-                        <span class="card-category">Tech Review</span>
-                        <h3 class="card-title">MacBook Pro Setup Tour</h3>
+                        <span class="card-category">Short Form</span>
+                        <h3 class="card-title">Viral Instagram Reel</h3>
                     </div>
                 </div>
 
-                <div class="portfolio-card fade-in-up" data-category="vlog">
-                    <div class="card-img-wrapper" onclick="playVideo(this, 'hT_nvWreIhg')">
-                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Vlog">
+                <div class="portfolio-card fade-in-up" data-category="long">
+                    <div class="card-img-wrapper" onclick="playVideo(this, 'rvmEz9RiDZ8')">
+                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Docu">
                         <i class="fas fa-play-circle play-icon"></i>
                     </div>
                     <div class="card-content">
-                        <span class="card-category">Travel Vlog</span>
-                        <h3 class="card-title">Bali Cinematic Travel</h3>
+                        <span class="card-category">Documentary Style</span>
+                        <h3 class="card-title">Cinematic Travel Vlog</h3>
                     </div>
                 </div>
 
-                <div class="portfolio-card fade-in-up" data-category="gaming">
-                    <div class="card-img-wrapper" onclick="playVideo(this, '7t03wH2xXzM')">
-                        <img src="https://images.unsplash.com/photo-1592155931584-901ac15763e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Anime">
+                <div class="portfolio-card fade-in-up" data-category="anime">
+                    <div class="card-img-wrapper" onclick="playVideo(this, 'GDMfiWEsvhw')">
+                        <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Anime">
                         <i class="fas fa-play-circle play-icon"></i>
                     </div>
                     <div class="card-content">
-                        <span class="card-category">Gaming/VFX</span>
-                        <h3 class="card-title">Cyberpunk Stream Recap</h3>
+                        <span class="card-category">Anime Videos</span>
+                        <h3 class="card-title">AMV Edit 2025</h3>
                     </div>
                 </div>
 
-                <div class="portfolio-card fade-in-up" data-category="tech">
-                    <div class="card-img-wrapper" onclick="playVideo(this, 'sF_810625s')">
+                <div class="portfolio-card fade-in-up" data-category="ecommerce">
+                    <div class="card-img-wrapper" onclick="playVideo(this, 'x3pV7rvvJQA')">
                         <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Tech">
                         <i class="fas fa-play-circle play-icon"></i>
                     </div>
                     <div class="card-content">
-                        <span class="card-category">eCommerce Ad</span>
+                        <span class="card-category">eCommerce Ads</span>
                         <h3 class="card-title">Smart Watch Promo</h3>
                     </div>
                 </div>
+                
+                <div class="portfolio-card fade-in-up" data-category="football">
+                    <div class="card-img-wrapper" onclick="playVideo(this, 'Ev0BnPwBigk')">
+                        <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Football">
+                        <i class="fas fa-play-circle play-icon"></i>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Football Edits</span>
+                        <h3 class="card-title">Messi vs Ronaldo Edit</h3>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -781,18 +848,22 @@
                 </div>
 
                 <div class="contact-form">
-                    <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                    <form name="submit-to-google-sheet-contact">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
+                            <input type="text" name="Name" class="form-control" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
+                            <input type="email" name="Email" class="form-control" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" rows="4" placeholder="Tell us about your project..." required></textarea>
+                            <input type="text" name="Phone" class="form-control" placeholder="Your Phone" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="Message" class="form-control" rows="4" placeholder="Tell us about your project..." required></textarea>
                         </div>
                         <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
                     </form>
+                    <span id="contact-msg" style="color: var(--secondary); margin-top: 10px; display: block;"></span>
                 </div>
             </div>
 
@@ -868,20 +939,59 @@
 
         // 4. VIDEO PLAYER FUNCTIONALITY (FIXED)
         function playVideo(element, videoId) {
+            // Check if iframe already exists to prevent double loading
+            if (element.querySelector('iframe')) return;
+
             const iframe = document.createElement('iframe');
             
-            // FIXED: Added backticks ` ` for template literal
-            iframe.src = 'https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0';
+            // FIX: Added '&mute=1'. Browsers BLOCK autoplay if sound is on.
+            // FIX: Used backticks ` ` for proper string interpolation
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0`;
             
             iframe.title = "YouTube video player";
             iframe.frameBorder = "0";
             iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
             iframe.allowFullscreen = true;
 
+            // Clear the image and play icon
             element.innerHTML = '';
+            // Add the video
             element.appendChild(iframe);
         }
-    </script>
-</body>
+        /* 5. GOOGLE SHEETS INTEGRATION LOGIC */
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwrt0s4yO3lCM85wuc5fvd7ab6xXaTh8Luw7e0T8idGPr0Gs0SgE0btX6xZuZWWX0g2zQ/exec'; 
 
-</html>
+        // Email Subscription Form
+        const emailForm = document.forms['submit-to-google-sheet-email'];
+        const emailMsg = document.getElementById('email-msg');
+
+        emailForm.addEventListener('submit', e => {
+            e.preventDefault();
+            emailMsg.innerHTML = "Sending...";
+            
+            fetch(scriptURL, { method: 'POST', body: new FormData(emailForm)})
+                .then(response => {
+                    emailMsg.innerHTML = "Thank you for subscribing!";
+                    setTimeout(function(){ emailMsg.innerHTML = "" }, 5000);
+                    emailForm.reset();
+                })
+                .catch(error => console.error('Error!', error.message));
+        });
+
+        // Contact Form
+        const contactForm = document.forms['submit-to-google-sheet-contact'];
+        const contactMsg = document.getElementById('contact-msg');
+
+        contactForm.addEventListener('submit', e => {
+            e.preventDefault();
+            contactMsg.innerHTML = "Sending...";
+            
+            fetch(scriptURL, { method: 'POST', body: new FormData(contactForm)})
+                .then(response => {
+                    contactMsg.innerHTML = "Message sent successfully!";
+                    setTimeout(function(){ contactMsg.innerHTML = "" }, 5000);
+                    contactForm.reset();
+                })
+                .catch(error => console.error('Error!', error.message));
+        });
+    </script>
